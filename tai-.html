@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TestAIng Hierarchy Structure</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2d3647; /* Dark Gray */
+      --secondary-color: #2d3748; /* Darker Gray */
+      --accent-color: #38b2ac; /* Teal */
+      --background-color: #f7fafc; /* Light Gray */
+      --text-color: #354155; /* Darker Gray */
+    }
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+    .header, .footer {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    .sidebar {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+    .button {
+      background-color: var(--accent-color);
+      color: white;
+    }
+    .button:hover {
+      background-color: #319795; /* Darker Teal */
+    }
+    .button, .sidebar button{
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen" style="font-size: 18px;">
+  
+  <!-- Header -->
+  <header class="header p-4 shadow-md">
+    <h1 class="font-bold text-center" style="font-size: 26px;">TestAIng Hierarchy Structure</h1>
+  </header>
+
+  <div class="flex flex-1">
+    <!-- Sidebar -->
+    <aside class="w-90 sidebar shadow-lg p-4 overflow-y-auto h-screen sticky top-0">
+      
+      <h2 class="text-xl font-bold mb-4">Mentors</h2>
+      <ul id="mentorList" class="space-y-2 mb-6">
+        <li><button class="w-full text-left p-2 rounded" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="selectMentor('shivakumar')">Shiva Kumar</button></li>
+        <li><button class="w-full text-left p-2 rounded" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="selectMentor('vachaspathi')">Vachaspathi Madabhushanam</button></li>
+        <li><button class="w-full text-left p-2 rounded" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="selectMentor('meghana')">Meghana Prabhandham</button></li>
+        <li><button class="w-full text-left p-2 rounded" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="selectMentor('bhavana')">Bhavana Chunchu</button></li>
+        <li><button class="w-full text-left p-2 rounded" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="selectMentor('anush')">Anush Poojary</button></li>
+        <li><button class="w-full text-left p-2 rounded" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="selectMentor('shubham_harish')">Shubham Chandra & Harish Krishna</button></li>
+      </ul>
+      
+      <h2 class="text-xl font-bold mb-4">Skills Required for Pipelines</h2>
+      <ul id="skillsList" class="space-y-2">
+        <li><button class="w-full text-left p-2 rounded" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('LLM')">LLM</button></li>
+        <li><button class="w-full text-left p-2 rounded" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('Image Pipeline')">Image Pipeline</button></li>
+        <li><button class="w-full text-left p-2 rounded" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('Structured Pipeline')">Structured Pipeline</button></li>
+        <li><button class="w-full text-left p-2 rounded" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('Audio Pipeline')">Audio Pipeline</button></li>
+        <li><button class="w-full text-left p-2 rounded" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('Timeseries Pipeline')">Timeseries Pipeline</button></li>
+        <li><button class="w-full text-left p-2 rounded" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('Test data generation')">Text Data Generation</button></li>
+        <li><button class="w-full text-left p-2 rounded" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('Text Pipeline')">Text pipeline</button></li>
+        <li><button class="w-full text-left p-2 rounded" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('Object Detection')">Object Detection</button></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+      <div id="mentorDetails" class="space-y-4"></div>
+      <div id="skillDetails" class="space-y-4"></div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer text-center p-4">
+    <p>&copy; 2025 TestAIng. All rights reserved.</p>
+    <p class="text-sm">Maintained by the Manager of TestAIng</p>
+  </footer>
+
+  <script>
+    const data = {
+      shivakumar: { 
+        projects: ["Text Pipeline", "Object Detection"], 
+        interns: ["Chaithanya", "Rajeshwari", "Suja Jayan", "Gadanki Yamunasree", "Nemalla Yasaswini", "Kshitiz Tyagi", "Avinash", "Aarnav"], 
+        collaborations: [],
+        service: [
+          "Media Sentiment Scorecard (Hindumisia)",
+          "Idex Problem Statements",
+          "Rajasthani to Hindi POC",
+          "Expression of interest to Bihar Machine Translation from Kaithi to devangiri lipi / Hindi",
+          "ISRO image Pipeline"
+        ]
+      },
+      shubham_harish: { 
+        projects: ["LLM", "POC: DPR Intelligence System"], 
+        interns: [], 
+        collaborations: [],
+        service: [
+          "Indian Railways Project POC(Gatisakti)"
+        ] 
+      },
+      meghana: {
+        projects: ["Image Pipeline", "Structured Pipeline"],
+        interns: ["Pushpita", "Manu", "Chaithra", "Swathi", "Harika", "Roshan", "Vijaya Lakshmi", "Ankita", "Aum", "Vemulapalli Jnana Gowtham", "Avinash"],
+        collaborations: ["Dhawal - Image Pipeline"],
+        service: [
+          "School Attendance Project",
+          "Image bias",
+          "Face recognition",
+          "ISRO image Pipeline"
+        ]
+      },
+      anush: {
+        projects: ["Audio Pipeline", "Audio Deepfake Fintech"],
+        interns: ["Abdul", "Nikita", "Manoj", "Sashi"],
+        collaborations: ["Abdul Kavi - Audio Deepfake", "Nikita - Audio Noise Cancellation"],
+        service: [
+          "Fintech project"
+        ]
+      },
+      vachaspathi: {
+        projects: ["Timeseries Pipeline", "Text Data Generation", "Text pipeline (Counterfactuals)", "Object Detection (Whitebox Explainability)", "Certificate Generator (Verity)"],
+        interns: ["Alankrita Singh", "Rahul Sharma", "Abhilash Mohan Das", "Aniket", "Vasanth", "Aaditya Nair", "Karthik JVR", "Pratham Parakh", "Yuvraj Kumar"],
+        collaborations: [
+          "Jaanavi, Shai Sharath - TSTR evaluation POC",
+          "Aiswarya P, Shai Sharath - Relational DB Exploration",
+          "Abhilash, Aniket - Auto-encoder Architectures",
+          "Alankrita - Data Eval using RFE",
+          "Pratham - Model Fine-tuning Eval",
+          "Karthik JVR - Data Privacy Standards"
+        ],
+        service: [
+          "TDM",
+          "Honeywell/Time Series with Harish Krishna"
+        ]
+      },
+      bhavana: { 
+        projects: ["Structure pipeline", "Regression pipeline", "Image pipeline"], 
+        interns: [], 
+        collaborations: [],
+        service: [
+          "Image + Helmet POC"
+        ]
+      }
+    };
+
+    const pipeline_skills = {
+  "LLM": [
+    "Basic understanding of LLMs (how they work, their structure/architecture, and tools/frameworks used)",
+    "Good Python programming skills (especially debugging)",
+    "Basic knowledge of Machine Learning concepts"
+  ],
+  "Audio Pipeline": [
+    "Basic Machine Learning Techniques - Understanding of ML fundamentals, especially for classification tasks.",
+    "Audio Processing Libraries - Experience with tools like:\n   Librosa - for audio feature extraction (MFCCs, spectrograms, etc.)\n   SpeechBrain - for building and testing speech/audio models\n   WebRTC VAD - for detecting voice activity in audio streams",
+    "Deep Learning Frameworks - Familiarity with:\n   PyTorch or TensorFlow - for model development\n   Hugging Face Transformers - if using pre-trained models for audio analysis",
+    "Python Programming - Strong coding skills for integrating models, preprocessing, and deployment.",
+    "FastAPI (Backend) - Basic understanding of how FastAPI is used to serve ML models in an application."
+  ],
+  "Text Pipeline": [
+    "Natural Language Processing fundamentals",
+    "Data Augmentation and Robustness testing",
+    "Machine Learning & Model Training",
+    "Basic knowledge on libraries like scikit-learn, pandas, numpy, matplotlib/seaborn"
+  ],
+  "Object Detection": [
+    "Basic foundation on Metamorphic testing",
+    "Object detection technology and image preprocessing"
+  ],
+  "Timeseries Pipeline": [
+    "Auto-regressive (AR-ARIMA) models for forecasting",
+    "Concept Drift",
+    "Multivariate Timeseries Analysis"
+  ],
+  "Test data generation": [
+    "Deep learning model training and Evaluation",
+    "GANS, VAEs, Statistical Analysis methods",
+    "Relational Database usage knowledge",
+    "ML algorithms and Implementation"
+  ],
+  "Structured Pipeline": [
+    "Packaging of internal structured pipelines into pip-installable Python modules.",
+    "Usage of tools like setuptools, requirements.txt, and PyPI or internal repositories."
+  ],
+  "Image Pipeline": [
+    "Basics of Computer Vision (CNN, Image preprocessing, feature extraction)",
+    "Practical experience with: scikit-learn, TensorFlow or PyTorch.",
+    "Solid foundation in Python Libraries: NumPy, pandas, matplotlib"
+  ],
+  "Regression Pipeline": [
+    "Mathematical & Statistical knowledge",
+    "Strong foundation in Machine Learning concepts",
+    "Data Handling"
+  ]
+}
+
+const pipeline_descriptions = {
+  "LLM": "Handles tasks involving large language models like fine-tuning, evaluation, and custom use-case integration.",
+  "Audio Pipeline": "Processes and analyzes audio signals for tasks like classification, noise reduction, or speech recognition.",
+  "Text Pipeline": "Performs data augmentation, classification, and robustness checks on text datasets.",
+  "Object Detection": "Detects and classifies objects in images or videos, includes preprocessing and explainability.",
+  "Timeseries Pipeline": "Analyzes time-dependent data for forecasting and drift detection.",
+  "Test data generation": "Generates synthetic datasets using models like GANs/VAEs for robust testing.",
+  "Structured Pipeline": "Handles structured/tabular data and packages processing logic into reusable Python modules.",
+  "Image Pipeline": "Focuses on image preprocessing, classification, and evaluation using vision models.",
+  "Regression Pipeline": "Builds and evaluates regression models using statistical and ML techniques."
+};
+
+function selectMentor(mentorKey) {
+  document.getElementById("skillDetails").innerHTML = "";
+  const mentor = data[mentorKey];
+  const container = document.getElementById("mentorDetails");
+  container.innerHTML = `
+  <h2 class="text-2xl font-semibold capitalize">${mentorKey.replace(/_/g, ' ')}</h2>
+    <div>
+      <button class="button w-52 h-12 px-4 py-2 rounded text-center my-1 block" onclick ="toggleSection('projects')">Projects</button>
+      <div id="projects" class="ml-4 mt-2 hidden">
+        <ul class="list-disc pl-5">
+          ${mentor.projects.map((p, i) => `
+          <li class="mb-4 border rounded-lg p-4 shadow bg-white" style="list-style-type: none;">
+            <div class="flex justify-between items-center">
+              <div>
+                <p class="font-bold text-lg text-blue-700">${p}</p>
+                <p class="text-sm italic text-gray-600">
+                  ${pipeline_descriptions[p] || "No description available."}
+                </p>
+              </div>
+              <button class="ml-4 px-3 py-1 bg-teal-600 text-white rounded hover:bg-teal-700 transition duration-200" onclick="togglePipelineDetails('pipeline-${mentorKey}-${i}')">
+                View Required Skills
+              </button>
+            </div>
+            <div
+              id="pipeline-${mentorKey}-${i}"
+              class="mt-3 hidden transition-all duration-300 ease-in-out">
+              <h4 class="font-semibold text-gray-700">Skills Required:</h4>
+              <ul class="list-disc pl-5 mt-1 text-sm text-gray-700">
+                ${(pipeline_skills[p] || ["No skill data available"]).map(skill => `
+                <li>${skill}</li>
+                `).join('')}
+              </ul>
+            </div>
+          </li>
+          `).join('')}
+        </ul>
+      </div>
+    </div>
+
+        <div>
+          <button class="button w-52 h-12 px-4 py-2 rounded text-center my-1 block" onclick ="toggleSection('interns')">Interns List</button>
+          <div id="interns" class="ml-4 mt-2 hidden">
+            <ul class="list-disc pl-5">${mentor.interns.map(item => `<li>${item}</li>`).join('') || "<li>No data</li>"}</ul>
+          </div>
+        </div>
+        <div>
+          <button class="button w-52 h-12 px-4 py-2 rounded text-center my-1 block" onclick ="toggleSection('collab')">Intern Collaborations</button>
+          <div id="collab" class="ml-4 mt-2 hidden">
+            <ul class="list-disc pl-5">${mentor.collaborations.map(item => `<li>${item}</li>`).join('') || "<li>No data</li>"}</ul>
+          </div>
+        </div>
+        <div>
+          <button class="button w-52 h-12 px-4 py-2 rounded text-center my-1 block" onclick ="toggleSection('service')">Service Projects</button>
+          <div id="service" class="ml-4 mt-2 hidden">
+            <ul class="list-disc pl-5">${mentor.service.map(item => `<li>${item}</li>`).join('') || "<li>No data</li>"}</ul>
+          </div>
+        </div>
+      `;
+    }
+
+    function showPipelineSkills(pipeline) {
+      document.getElementById("mentorDetails").innerHTML = "";
+      const skills = pipeline_skills[pipeline] || ["No skill data available"];
+      const skillContainer = document.getElementById("skillDetails");
+      skillContainer.innerHTML = `
+        <h2 class="text-xl font-semibold">${pipeline} - Required Skills</h2>
+        <ul class="list-disc pl-5">
+          ${skills.map(skill => `<li>${skill}</li>`).join('')}
+        </ul>
+      `;
+    }
+    
+    function togglePipelineDetails(id) {
+      const section = document.getElementById(id);
+      section.classList.toggle("hidden");
+    }
+    
+    function toggleSection(id) {
+      const element = document.getElementById(id);
+      element.classList.toggle("hidden");
+    }
+  </script>
+</body>
+</html>
