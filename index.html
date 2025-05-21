@@ -126,54 +126,55 @@
     };
 
     const pipeline_skills = {
-    "LLM": [
-        "1. Basic understanding of LLMs (how they work, their structure/architecture, and tools/frameworks used)",
-        "2. Good Python programming skills (especially debugging)",
-        "3. Basic knowledge of Machine Learning concepts"
-    ],
-    "Audio Pipeline": [
-        "1. Basic Machine Learning Techniques - Understanding of ML fundamentals, especially for classification tasks.",
-        "2. Audio Processing Libraries - Experience with tools like:\n   Librosa - for audio feature extraction (MFCCs, spectrograms, etc.)\n   SpeechBrain - for building and testing speech/audio models\n   WebRTC VAD - for detecting voice activity in audio streams",
-        "3. Deep Learning Frameworks - Familiarity with:\n   PyTorch or TensorFlow - for model development\n   Hugging Face Transformers - if using pre-trained models for audio analysis",
-        "4. Python Programming - Strong coding skills for integrating models, preprocessing, and deployment.",
-        "5. FastAPI (Backend) - Basic understanding of how FastAPI is used to serve ML models in an application."
-    ],
-    "Text Pipeline": [
-        "1. Natural Language Processing fundamentals",
-        "2. Data Augmentation and Robustness testing",
-        "3. Machine Learning & Model Training",
-        "4. Basic knowledge on libraries like scikit-learn, pandas, numpy, matplotlib/seaborn"
-    ],
-    "Object Detection": [
-        "1. Basic foundation on Metamorphic testing",
-        "2. Object detection technology and image preprocessing"
-    ],
-    "Timeseries Pipeline": [
-        "1. Auto-regressive (AR-ARIMA) models for forecasting",
-        "2. Concept Drift",
-        "3. Multivariate Timeseries Analysis"
-    ],
-    "Test data generation": [
-        "1. Deep learning model training and Evaluation",
-        "2. GANS, VAEs, Statistical Analysis methods",
-        "3. Relational Database usage knowledge",
-        "4. ML algorithms and Implementation"
-    ],
-    "Structured Pipeline": [
-        "1. Packaging of internal structured pipelines into pip-installable Python modules.",
-        "2. Usage of tools like setuptools, requirements.txt, and PyPI or internal repositories."
-    ],
-    "Image Pipeline": [
-        "1. Basics of Computer Vision (CNN, Image preprocessing, feature extraction)",
-        "2. Practical experience with: scikit-learn, TensorFlow or PyTorch.",
-        "3. Solid foundation in Python Libraries: NumPy, pandas, matplotlib"
-    ],
-    "Regression Pipeline": [
-        "1. Mathematical & Statistical knowledge",
-        "2. Strong foundation in Machine Learning concepts",
-        "3. Data Handling"
-    ]
+  "LLM": [
+    "Basic understanding of LLMs (how they work, their structure/architecture, and tools/frameworks used)",
+    "Good Python programming skills (especially debugging)",
+    "Basic knowledge of Machine Learning concepts"
+  ],
+  "Audio Pipeline": [
+    "Basic Machine Learning Techniques - Understanding of ML fundamentals, especially for classification tasks.",
+    "Audio Processing Libraries - Experience with tools like:\n   Librosa - for audio feature extraction (MFCCs, spectrograms, etc.)\n   SpeechBrain - for building and testing speech/audio models\n   WebRTC VAD - for detecting voice activity in audio streams",
+    "Deep Learning Frameworks - Familiarity with:\n   PyTorch or TensorFlow - for model development\n   Hugging Face Transformers - if using pre-trained models for audio analysis",
+    "Python Programming - Strong coding skills for integrating models, preprocessing, and deployment.",
+    "FastAPI (Backend) - Basic understanding of how FastAPI is used to serve ML models in an application."
+  ],
+  "Text Pipeline": [
+    "Natural Language Processing fundamentals",
+    "Data Augmentation and Robustness testing",
+    "Machine Learning & Model Training",
+    "Basic knowledge on libraries like scikit-learn, pandas, numpy, matplotlib/seaborn"
+  ],
+  "Object Detection": [
+    "Basic foundation on Metamorphic testing",
+    "Object detection technology and image preprocessing"
+  ],
+  "Timeseries Pipeline": [
+    "Auto-regressive (AR-ARIMA) models for forecasting",
+    "Concept Drift",
+    "Multivariate Timeseries Analysis"
+  ],
+  "Test data generation": [
+    "Deep learning model training and Evaluation",
+    "GANS, VAEs, Statistical Analysis methods",
+    "Relational Database usage knowledge",
+    "ML algorithms and Implementation"
+  ],
+  "Structured Pipeline": [
+    "Packaging of internal structured pipelines into pip-installable Python modules.",
+    "Usage of tools like setuptools, requirements.txt, and PyPI or internal repositories."
+  ],
+  "Image Pipeline": [
+    "Basics of Computer Vision (CNN, Image preprocessing, feature extraction)",
+    "Practical experience with: scikit-learn, TensorFlow or PyTorch.",
+    "Solid foundation in Python Libraries: NumPy, pandas, matplotlib"
+  ],
+  "Regression Pipeline": [
+    "Mathematical & Statistical knowledge",
+    "Strong foundation in Machine Learning concepts",
+    "Data Handling"
+  ]
 }
+
     function selectMentor(mentorKey) {
       document.getElementById("skillDetails").innerHTML = "";
       const mentor = data[mentorKey];
