@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intern Onboarding</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .active {
+      background-color:#14b8a6; /* teal-500 */
+      color: white;
+    }
+    :root {
+      --primary-color: #2d3647; /* Dark Gray */
+      --secondary-color: #2d3748; /* Darker Gray */
+      --accent-color: #38b2ac; /* Teal */
+      --background-color: #fbfbfb; /* Light Gray */
+      --text-color: #354155; /* Darker Gray */
+    }
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+    .header, .footer {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    .sidebar {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <!-- Header -->
+    <header class="header p-4 shadow-md relative text-center">
+        <h1 class="font-bold text-center" style="font-size: 30px;">Intern Onboarding Essentials</h1>
+        <a href="index.html" class="absolute right-4 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600 transition">🏠 Home</a>
+    </header>
+
+  <!-- Main layout: Sidebar + Content -->
+  <div class="flex flex-1 overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-72 sidebar border-t-2 border-white-500 shadow-lg p-4 overflow-y-auto h-screen sticky top-0">
+    <ul class="space-y-2">
+        <li>
+        <button id="btn-main" class="w-full text-left p-2 rounded hover:bg-teal-400 mt-4 text-lg font-bold" onclick="showContent('main', this)">
+            Intern Guide
+        </button>
+        </li>
+        <li>
+        <button id="btn-case1" class="w-full text-left p-2 rounded hover:bg-teal-400 pl-6 text-base font-semibold" onclick="showContent('case1', this)">
+            Case 1: Beginners
+        </button>
+        </li>
+        <li>
+        <button id="btn-case2" class="w-full text-left p-2 rounded hover:bg-teal-400 pl-6 text-base font-semibold" onclick="showContent('case2', this)">
+            Case 2: Intermediate
+        </button>
+        </li>
+        <li>
+        <button id="btn-case3" class="w-full text-left p-2 rounded hover:bg-teal-400 pl-6 text-base font-semibold" onclick="showContent('case3', this)">
+            Case 3: Advanced
+        </button>
+        </li>
+    </ul>
+    </aside>
+
+
+        <!-- Main Content -->
+    <main id="mainContent" class="flex-1 px-12 py-10 overflow-y-auto space-y-6 leading-relaxed">
+      <h1 class="text-3xl font-bold text-teal-700">Welcome to Intern Onboarding</h1>
+      <p class="text-lg">Select a section from the sidebar to get started.</p>
+    </main>
+
+  </div>
+
+    <!-- Footer -->
+  <footer class="footer text-center p-4">
+    <p>&copy; 2025 TestAIng. All rights reserved.</p>
+    <p class="text-sm">Maintained by the Manager of TestAIng</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const content = {
+      main: `
+        <div class="space-y-6">
+          <h1 class="text-3xl font-semibold text-teal-700">Welcome to the Internship Program</h1>
+          <p class="text-base leading-relaxed">At AiEnsured, we recognize that every intern comes with a different background. Whether you're just beginning your Python journey or you're already experienced in AI/ML, this guide is here to help you get started with the right resources, projects, and mentorship.</p>
+
+          <h2 class="text-2xl font-semibold text-teal-600">Getting Started: Common Tasks for All Interns</h2>
+          <p class="text-base">Regardless of skill level, each intern begins by exploring foundational concepts in AI ethics, validation, and regulatory frameworks.</p>
+
+          <h3 class="text-xl font-semibold text-gray-700">Initial Tasks:</h3>
+          <ul class="list-disc pl-6 space-y-2 text-base">
+            <li>Study the purpose of AI regulations and the importance of frameworks like the EU AI Act</li>
+            <li>Create a brief presentation on: "Ethical Principles in AI – Fairness, Accountability, Transparency"</li>
+            <li>Explore trending AI tools and platforms</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-700">Helpful Links:</h3>
+          <ul class="list-disc pl-6 text-blue-700 space-y-1">
+            <li><a href="https://celebrated-narwhal-e590e0.netlify.app/" target="_blank">EU AI Act Compliance Checker</a></li>
+            <li><a href="https://prod.aiensured.com/" target="_blank">AiEnsured Validation Report</a></li>
+          </ul>
+        </div>
+      `,
+      case1: `
+        <div class="space-y-6">
+          <h1 class="text-2xl font-bold text-teal-600">Case 1: Beginners – No Python Knowledge</h1>
+          <p>For interns just getting started with Python, we provide beginner-friendly learning paths focused on developing practical skills needed for AI projects.</p>
+
+          <h3 class="text-lg font-semibold text-gray-700">Learning Resource:</h3>
+          <a href="https://docs.google.com/document/d/1GEcuVIby0T_X-qYgpmBLd9N6QGxP2Vk5JBhQm0Mco2Y/edit?usp=sharing" class="text-blue-700 block">Beginner Python Curriculum</a>
+
+          <h3 class="text-lg font-semibold text-gray-700">Example Task:</h3>
+          <p>Perform a basic analysis on <a href="https://hindumisia.ai/" class="text-blue-700" target="_blank">Hindumisia.ai report</a>.</p>
+        </div>
+      `,
+      case2: `
+        <div class="space-y-6">
+          <h1 class="text-2xl font-bold text-teal-600">Case 2: Basic AI/ML Understanding</h1>
+          <p>These interns are familiar with fundamental concepts in machine learning and are ready to engage in analytical or hands-on tasks with light supervision.</p>
+
+          <h3 class="text-lg font-semibold text-gray-700">Possible Tasks:</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Assist in AI validation report review</li>
+            <li>Explore explainability libraries (e.g., SHAP, LIME)</li>
+            <li>Shadow a project involving text classification or image recognition</li>
+          </ul>
+        </div>
+      `,
+      case3: `
+        <div class="space-y-6">
+          <h1 class="text-2xl font-bold text-teal-600">Case 3: Experienced or Advanced Interns</h1>
+          <p>Interns in this category are expected to take initiative and contribute to live projects. They might have prior experience with model building, APIs, or ML pipelines.</p>
+
+          <h3 class="text-lg font-semibold text-gray-700">Project Involvement:</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Counterfactual generation for text classifiers</li>
+            <li>Privacy and fairness testing pipelines</li>
+            <li>Model Explainability Dashboard using SHAP & LIME</li>
+          </ul>
+        </div>
+      `
+    };
+
+    function showContent(section, btn) {
+      document.getElementById('mainContent').innerHTML = content[section];
+      document.querySelectorAll('aside button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    window.onload = () => {
+      const defaultBtn = document.getElementById('btn-main');
+      showContent('main', defaultBtn);
+    };
+  </script>
+</body>
+</html>
