@@ -47,14 +47,13 @@ header {
 
 header h1 {
     margin: 0 auto;
-    font-size: 1.25rem;
     color:white;
 }
 
 .content-wrapper {
     display: flex;
     margin-top: 84px;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
     min-height: calc(100vh - 84px);
 }
 
@@ -77,45 +76,27 @@ header h1 {
 
 .main-menu {
     list-style: none;
-    padding: 1.5rem;
+    padding: 1rem;
+    padding-top: 50px;
 }
 
-.menu-item, .sub-menu-item {
+.menu-item{
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
     width: 100%;
     text-align: left;
-    padding: 0.75rem;
+    padding: 0.5rem;
     background: none;
     border: none;
     border-radius: 0.375rem;
     cursor: pointer;
     color: white;
     transition: all 0.2s;
-    font-size: 1rem;
 }
 
-.menu-item {
-    font-weight: 500;
-}
-
-.menu-item:hover, .sub-menu-item:hover {
-    background-color: #f7fafc;
-    color: #2b6cb0;
-}
-
-.menu-item.active, .sub-menu-item.active {
-    background-color: #ebf8ff;
-    color: #2b6cb0;
-}
-
-.sub-menu {
-    list-style: none;
-    margin-left: 1rem;
-    margin-top: 0.5rem;
-    display: none;
-}
-
-.sub-menu.show {
-    display: block;
+.menu-item:hover {
+    background-color: #1abc9c;
 }
 
 .main-content {
@@ -126,7 +107,7 @@ header h1 {
     background-color: white;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    margin: 1.5rem;
+    margin: 1rem;
 }
 
 .main-content.shifted {
