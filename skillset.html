@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TestAIng Hierarchy Structure</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2d3647; /* Dark Gray */
+      --secondary-color: #2d3748; /* Darker Gray */
+      --accent-color: #38b2ac; /* Teal */
+      --background-color: #fbfbfb; /* Light Gray */
+      --text-color: #354155; /* Darker Gray */
+    }
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+    .header, .footer {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    .sidebar {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+    .button {
+      background-color: var(--accent-color);
+      color: white;
+    }
+    .button:hover {
+      background-color: #319795; /* Darker Teal */
+    }
+    .button, .sidebar button{
+      transition: background-color 0.3s ease;
+    }
+    .active {
+      background-color:#14b8a6; /* teal-500 */
+      color: white;
+    }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen" style="font-size: 18px;">
+  
+  <!-- Header -->
+    <header class="header p-4 shadow-md relative text-center">
+        <h1 class="font-bold text-center" style="font-size: 30px;">Skill requirements for Pipelines</h1>
+        <a href="index.html" class="absolute right-4 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600 transition" style="background-color: #1abc9c;">🏠 Home</a>
+    </header>
+
+  <div class="flex flex-1">
+    <!-- Sidebar -->
+    <aside class="w-72 sidebar border-t-2 border-white-500 shadow-lg p-4 overflow-y-auto h-screen sticky top-0">
+      
+      <h2 class="text-lg font-bold mb-4 mt-4">Select a Pipeline to View Skills</h2>
+      <ul id="skillsList" class="space-y-2">
+        <li><button class="w-full text-left p-2 rounded text-base font-semibold" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('LLM')">LLM</button></li>
+        <li><button class="w-full text-left p-2 rounded text-base font-semibold" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('Image Pipeline')">Image Pipeline</button></li>
+        <li><button class="w-full text-left p-2 rounded text-base font-semibold" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('Structured Pipeline')">Structured Pipeline</button></li>
+        <li><button class="w-full text-left p-2 rounded text-base font-semibold" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('Audio Pipeline')">Audio Pipeline</button></li>
+        <li><button class="w-full text-left p-2 rounded text-base font-semibold" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('Timeseries Pipeline')">Timeseries Pipeline</button></li>
+        <li><button class="w-full text-left p-2 rounded text-base font-semibold" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('Test data generation')">Text Data Generation</button></li>
+        <li><button class="w-full text-left p-2 rounded text-base font-semibold" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('Text Pipeline')">Text pipeline</button></li>
+        <li><button class="w-full text-left p-2 rounded text-base font-semibold" onmouseover="this.style.backgroundColor='#1abc9c'" onmouseout="this.style.backgroundColor='#2d3748'" onclick="showPipelineSkills('Object Detection')">Object Detection</button></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+      <div id="mentorDetails" class="space-y-4"></div>
+      <div id="skillDetails" class="space-y-4"></div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer text-center p-4">
+    <p>&copy; 2025 TestAIng. All rights reserved.</p>
+    <p class="text-sm">Maintained by the Manager of TestAIng</p>
+  </footer>
+
+  <script>
+    const pipeline_skills = {
+  "LLM": [
+    "Basic understanding of LLMs (how they work, their structure/architecture, and tools/frameworks used)",
+    "Good Python programming skills (especially debugging)",
+    "Basic knowledge of Machine Learning concepts"
+  ],
+  "Audio Pipeline": [
+    "Basic Machine Learning Techniques - Understanding of ML fundamentals, especially for classification tasks.",
+    "Audio Processing Libraries - Experience with tools like:\n   Librosa - for audio feature extraction (MFCCs, spectrograms, etc.)\n   SpeechBrain - for building and testing speech/audio models\n   WebRTC VAD - for detecting voice activity in audio streams",
+    "Deep Learning Frameworks - Familiarity with:\n   PyTorch or TensorFlow - for model development\n   Hugging Face Transformers - if using pre-trained models for audio analysis",
+    "Python Programming - Strong coding skills for integrating models, preprocessing, and deployment.",
+    "FastAPI (Backend) - Basic understanding of how FastAPI is used to serve ML models in an application."
+  ],
+  "Text Pipeline": [
+    "Natural Language Processing fundamentals",
+    "Data Augmentation and Robustness testing",
+    "Machine Learning & Model Training",
+    "Basic knowledge on libraries like scikit-learn, pandas, numpy, matplotlib/seaborn"
+  ],
+  "Object Detection": [
+    "Basic foundation on Metamorphic testing",
+    "Object detection technology and image preprocessing"
+  ],
+  "Timeseries Pipeline": [
+    "Auto-regressive (AR-ARIMA) models for forecasting",
+    "Concept Drift",
+    "Multivariate Timeseries Analysis"
+  ],
+  "Test data generation": [
+    "Deep learning model training and Evaluation",
+    "GANS, VAEs, Statistical Analysis methods",
+    "Relational Database usage knowledge",
+    "ML algorithms and Implementation"
+  ],
+  "Structured Pipeline": [
+    "Packaging of internal structured pipelines into pip-installable Python modules.",
+    "Usage of tools like setuptools, requirements.txt, and PyPI or internal repositories."
+  ],
+  "Image Pipeline": [
+    "Basics of Computer Vision (CNN, Image preprocessing, feature extraction)",
+    "Practical experience with: scikit-learn, TensorFlow or PyTorch.",
+    "Solid foundation in Python Libraries: NumPy, pandas, matplotlib"
+  ],
+  "Regression Pipeline": [
+    "Mathematical & Statistical knowledge",
+    "Strong foundation in Machine Learning concepts",
+    "Data Handling"
+  ]
+}
+    function showPipelineSkills(pipeline) {
+      document.getElementById("mentorDetails").innerHTML = "";
+      const skills = pipeline_skills[pipeline] || ["No skill data available"];
+      const skillContainer = document.getElementById("skillDetails");
+      skillContainer.innerHTML = `
+        <h2 class="text-xl font-bold" style="color: #14b8a6;">${pipeline} - Required Skills</h2>
+        <ul class="list-disc pl-5">
+          ${skills.map(skill => `<li>${skill}</li>`).join('')}
+        </ul>
+      `;
+      document.querySelectorAll('aside button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
