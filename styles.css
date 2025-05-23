@@ -101,7 +101,7 @@ header h1 {
 
 .main-content {
     flex: 1;
-    padding: 1.5rem;
+    padding: 2.5rem;
     margin-left: 0;
     transition: margin-left 0.3s ease-in-out;
     background-color: white;
@@ -115,23 +115,22 @@ header h1 {
 }
 
 .content-divider {
-    height: 2px;
-    width: 5rem;
-    background-color: #4299e1;
+    height: 2.5px;
+    width: 7rem;
+    background-color:darkred;
     margin: 1rem 0;
     border-radius: 1px;
 }
 
 #contentTitle {
-    color: #2d3748;
-    font-size: 1.5rem;
+    color: darkcyan;
+    font-size: 2rem;
     font-weight: 600;
 }
 
 #contentBody {
-    color: #4a5568;
     line-height: 1.625;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -143,3 +142,59 @@ header h1 {
         margin-left: 0;
     }
 }
+
+.company-info p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #354155;
+}
+
+.social-link img {
+  display: block;
+  border-radius: 2px;
+  margin: 0 auto 8px;
+  
+  transition: filter 0.3s ease;
+}
+.social-link:hover img {
+  filter: grayscale(0.5);
+}
+.social-link p {
+  font-weight: bold;
+  color: #333;
+}
+
+.social-links a,
+.social-links a p {
+  text-decoration: none !important;
+  font-weight: bold;
+  color:#555;
+}
+
+.youtube-videos {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.youtube-videos h3 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: darkcyan;
+    margin-bottom: 10px;
+}
+
+.youtube-videos iframe {
+    width: 350px;
+    height: 210px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.youtube-videos iframe:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+
