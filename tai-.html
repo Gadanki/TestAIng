@@ -87,15 +87,15 @@
   <script>
     const data = {
       shivakumar: { 
-        projects: ["Text Pipeline", "Object Detection"], 
+        projects: ["Text Pipeline", "Object Detection", "Hindumisia.ai", "D4 sense", "Geometric Camera Calibration"], 
         interns: ["Chaithanya", "Rajeshwari D M", "Suja Jayan", "Gadanki Yamunasree", "Nemalla Yasaswini", "Kshitiz Tyagi", "Avinash Singh", "Aarnav Pokkuluri"], 
-        collaborations: [],
+        collaborations: ["The current batch of interns is interpreting the documentation and familiarizing themselves with the pipeline execution. The team is also actively exploring and researching potential enhancements for the existing stages."],
         service: [
-          "Media Sentiment Scorecard (Hindumisia)",
           "Idex Problem Statements",
           "Rajasthani to Hindi POC",
           "Expression of interest to Bihar Machine Translation from Kaithi to devangiri lipi / Hindi",
-          "ISRO image Pipeline"
+          "ISRO image Pipeline (Collborated with Meghana)",
+          "Context Based Retail payments - Finalist in the RBI Harbinger Hackathon"
         ]
       },
       shubham_harish: { 
@@ -245,13 +245,16 @@
     const pipeline_descriptions = {
       "LLM": "Handles tasks involving large language models like fine-tuning, evaluation, and custom use-case integration.",
       "Audio Pipeline": "Processes and analyzes audio signals for tasks like classification, noise reduction, or speech recognition.",
-      "Text Pipeline": "Performs data augmentation, classification, and robustness checks on text datasets.",
-      "Object Detection": "Detects and classifies objects in images or videos, includes preprocessing and explainability.",
+      "Text Pipeline": "Collaborated with the team to design a Responsible AI pipeline using classical Machine Learning, Deep Learning, and NLP-based approaches. The pipeline was evaluated on various text classification datasets to ensure fairness, accountability, and robustness.",
+      "Object Detection": "Worked with the team to design an Object Detection pipeline using YOLOv3 on the Pascal VOC dataset (20 classes) focused on road-based scenarios. The trained model was deployed on a Jetson Nano edge device to compare and analyze the response time differences between AWS cloud and edge device environments.",
       "Timeseries Pipeline": "Analyzes time-dependent data for forecasting and drift detection.",
       "Test data generation": "Generates synthetic datasets using models like GANs/VAEs for robust testing.",
       "Structured Pipeline": "Handles structured/tabular data and packages processing logic into reusable Python modules.",
       "Image Pipeline": "Focuses on image preprocessing, classification, and evaluation using vision models.",
-      "Regression Pipeline": "Builds and evaluates regression models using statistical and ML techniques."
+      "Regression Pipeline": "Builds and evaluates regression models using statistical and ML techniques.",
+      "Hindumisia.ai": "Collaborated with the team to automate news scraping from various portals and developed sentiment analysis pipelines using pre-trained models such as RNN, LSTM, and BERT—achieving a 97.2% success rate in daily data collection. Launched the first version of the Hindumisia Streamlit-based website with filtering features. Additionally, implemented zero-shot topic classification, set up production/lab server installations, and automated the full pipeline with scheduled CSV backups via email.",
+      "D4 sense": "Designed and Audited with the team on a robust AI-powered visual search system using CNNs, darknet and Mobile Net, enabling seamless mapping of physical objects to corresponding digital content applications, impacting 3M+ users and driving a $290M revenue increase.",
+      "Geometric Camera Calibration": "Developed and implemented data preprocessing pipelines for geometric camera calibration, enhancing lens defect detection accuracy by 25%."
     };
 
     function selectMentor(mentorKey) {
@@ -269,7 +272,7 @@
                 <div class="flex justify-between items-center">
                   <div>
                     <p class="font-bold text-lg text-blue-700">${p}</p>
-                    <p class="text-sm italic text-gray-600">
+                    <p class="text-l text-gray-600">
                       ${pipeline_descriptions[p] || "No description available."}
                     </p>
                   </div>
